@@ -2,12 +2,12 @@
 %define		mod_name	cgroupmin
 Summary:	Resource management per vhost
 Name:		apache-mod_%{mod_name}
-Version:	0.0.1
+Version:	0.0.2
 Release:	1
 License:	GPL
 Group:		Networking/Daemons/HTTP
-Source0:	https://github.com/arekm/mod_cgroupmin/archive/v0.0.1.tar.gz
-# Source0-md5:	3e56d21b6efbbda3cb6510edd153de97
+Source0:	https://github.com/arekm/mod_cgroupmin/archive/v%{version}.tar.gz
+# Source0-md5:	8bdbd52c596389297df5af7e4ab0398d
 BuildRequires:	%{apxs}
 BuildRequires:	apache-devel >= 2.0
 BuildRequires:	apr-devel >= 1:1.0
