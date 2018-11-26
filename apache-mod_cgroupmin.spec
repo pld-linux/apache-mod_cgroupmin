@@ -8,6 +8,7 @@ License:	GPL
 Group:		Networking/Daemons/HTTP
 Source0:	https://github.com/arekm/mod_cgroupmin/archive/v%{version}.tar.gz
 # Source0-md5:	8bdbd52c596389297df5af7e4ab0398d
+URL:		https://github.com/arekm/mod_cgroupmin/
 BuildRequires:	%{apxs}
 BuildRequires:	apache-devel >= 2.0
 BuildRequires:	apr-devel >= 1:1.0
@@ -44,8 +45,8 @@ mod_cgroup can be used for:
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_pkglibdir},%{_sysconfdir}}
 
-install .libs/mod_%{mod_name}.so $RPM_BUILD_ROOT%{_pkglibdir}/mod_%{mod_name}.so
-install mod_%{mod_name}.conf  $RPM_BUILD_ROOT%{_sysconfdir}/00_mod_cgroupmin.conf
+install -p .libs/mod_%{mod_name}.so $RPM_BUILD_ROOT%{_pkglibdir}/mod_%{mod_name}.so
+cp -p mod_%{mod_name}.conf  $RPM_BUILD_ROOT%{_sysconfdir}/00_mod_cgroupmin.conf
 
 %clean
 rm -rf $RPM_BUILD_ROOT
